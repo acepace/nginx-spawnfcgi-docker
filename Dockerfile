@@ -2,6 +2,7 @@ FROM nginx:stable
 
 RUN apt-get update && \
 	apt-get install --no-install-recommends --no-install-suggests -y spawn-fcgi && \
+	apt-get install --no-install-recommends --no-install-suggests -y pgrep ps && \
         apt-get purge -y --auto-remove
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
